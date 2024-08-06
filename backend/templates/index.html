@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis Tools</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Analysis Tools</h1>
+        <div class="input-section">
+            <label for="symbol">Stock Symbol:</label>
+            <input type="text" id="symbol" name="symbol">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" name="start-date">
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" name="end-date">
+            <label for="indicators">Indicators:</label>
+            <select id="indicators" name="indicators" multiple>
+                <option value="ma">Moving Average</option>
+                <option value="ema">Exponential Moving Average</option>
+                <option value="bb">Bollinger Bands</option>
+                <option value="rsi">RSI</option>
+            </select>
+            <button id="generate-chart">Generate Chart</button>
+            <button id="run-backtest">Run Backtest</button>
+        </div>
+        <div id="chart"></div>
+        <div id="backtest-results"></div>
+    </div>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+</body>
+</html>
